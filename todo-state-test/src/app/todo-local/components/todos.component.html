@@ -1,0 +1,8 @@
+<p *ngFor="let todo of (todos$ | async)">{{todo.description}}</p>
+<div>
+    <button (click)="loadTodos()">Load Todos</button>
+</div>
+<button (click)="addTodo()">Add Todo</button>
+<p *ngIf="(haveAnyError$|async)===true">
+    <span>{{this.error$|async}}</span>
+</p>
